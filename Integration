@@ -1,0 +1,14 @@
+(*Fundamental Theorem of Calculus*)
+Animate[
+ Column[{Plot[{Sin[x]/x, {Piecewise[{{Sin[x]/x, 0 <= x < t}}]}}, {x, 
+     0, 4 Pi}, PlotRange -> {-.4, 1}, Filling -> {2 -> Axis}], 
+   ListPlot[
+    Table[{n, NIntegrate[Sin[x]/x, {x, 0, n}]}, {n, 0, 12, .1}], 
+    PlotRange -> {0, 2}]}], {t, 0, 12, .1}]
+    
+    
+    ///////////////////////////////////////////////////////////////////////////
+    
+    (*F.T.C.*)Animate[
+ Plot[{Log[x]^2, {Piecewise[{{Log[x]^2, 0 <= x < t}}]}}, {x, 0, 6}, 
+  PlotRange -> {-.4, 6}, Filling -> {2 -> Axis}], {t, 0, 6, .01}]
