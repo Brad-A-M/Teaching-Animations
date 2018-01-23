@@ -1,0 +1,38 @@
+(*I am demonstrating the Central Limit Theorem.   The \
+Theorem:  Take a large enough sample from any distribution, then \
+average the sample. The averages will have a normal distribution.*)
+
+Histogram[
+ RandomVariate[ChiSquareDistribution[1], 
+  500]](*A distribuiton that is not normal*)
+  
+  Mean[RandomVariate[ChiSquareDistribution[1], 
+  30]](*This generates a random sample of size 30 then computes the \
+average*)
+
+(*Create the table*)
+T := Table[Mean[RandomVariate[ChiSquareDistribution[1], 100]], {1}];
+gG = {};
+While[
+ Length[T] < 100,
+ gG = Append[gG, Histogram[T]];
+ AppendTo[T, Mean[RandomVariate[ChiSquareDistribution[1], 100]]
+  ]
+ ]
+ 
+ (*Show it off!!*)
+ Manipulate[
+ Show[gG[[k]], Axes -> False, Frame -> True, 
+  PlotRange -> {{0.5, 2}, {0, 30}}], {k, 1, Length[gG], 1}]
+  
+  
+  Below are some other animations of statistical concepts.
+  
+  B = RandomVariate[NormalDistribution[0, 1], 100]
+  
+  (*Watch how many confidence intervals caputure the ture mean out of \
+100*)Animate[
+ T := Table[{{Part[B, i] - 1*n, i/10}, {Part[B, i] + 1*n, i/10}}, {i, 
+    1, 100}]; 
+ Graphics[Line[T], Axes -> {True, True}, 
+  Ticks -> {{-2, -1, 0, 1, 2}, None}], {n, 1, 1.96, .01}]
