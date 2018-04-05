@@ -1,0 +1,36 @@
+(*Mathematica 8 Animation that shows the eigenvectors of a 2x2 linear transformation are scaled*)
+
+A := {{1, 1}, {1, 0}}; (*The Matrix*)
+
+v00 := {0, 0}; v10 := {1, 0}; v01 := {0, 1}; v21 := {2, 
+  1}; vn21 := {-2, 1}; v22 := {2, 2}; vn22 := {-2, 2}; v20 := {2, 
+  0}; vn20 := {-2, 
+  0}; v2n1 := {2, -1}; vn2n1 := {-2, -1}; v2n2 := {2, -2}; vn2n2 := 
+{-2, -2}; vn1n2 := {-1, -2}; vn12 := {-1, 
+  2}; v0n2 := {0, -2}; v02 := {0, 2}; v1n2 := {1, -2}; v12 := {1, 2}; (*For plotting a 2x2 grid.*)
+  
+  
+  (*The animation. In the second line one can change the zoom. If the transformation doesn't have two real eigenvalues
+  the image will still plot but you will be warned.*)
+  
+Animate[Show[
+  Plot[133, {x, -2, 2}, PlotRange -> {-2, 2}, 
+   Epilog -> {Arrow[{(1 - t)*v00 + t*A.v00, (1 - t)*v10 + t*A.v10}], 
+     Arrow[{(1 - t)*v00 + t*A.v00, (1 - t)*v01 + t*A.v01}], 
+     Line[{(1 - t)*vn21 + t*A.vn21, (1 - t)*v21 + t*A.v21}], 
+     Line[{(1 - t)*vn22 + t*A.vn22, (1 - t)*v22 + t*A.v22}], 
+     Line[{(1 - t)*vn20 + t*A.vn20, (1 - t)*v20 + t*A.v20}], 
+     Line[{(1 - t)*vn2n1 + t*A.vn2n1, (1 - t)*v2n1 + t*A.v2n1}], 
+     Line[{(1 - t)*vn2n2 + t*A.vn2n2, (1 - t)*v2n2 + t*A.v2n2}], 
+     Line[{(1 - t)*vn21 + t*A.vn21, (1 - t)*v21 + t*A.v21}], 
+     Line[{(1 - t)*vn2n2 + t*A.vn2n2, (1 - t)*vn22 + t*A.vn22}],
+     Line[{(1 - t)*vn1n2 + t*A.vn1n2, (1 - t)*vn12 + t*A.vn12}], 
+     Line[{(1 - t)*v0n2 + t*A.v0n2, (1 - t)*v02 + t*A.v02}], 
+     Line[{(1 - t)*v1n2 + t*A.v1n2, (1 - t)*v12 + t*A.v12}], 
+     Line[{(1 - t)*v2n2 + t*A.v2n2, (1 - t)*v22 + t*A.v22}]}], 
+  Graphics[{Red, 
+    Arrow[{{0, 0}, (1 - t)*Part[Eigenvectors[A], 1] + 
+       t*A.Part[Eigenvectors[A], 1]}]}], 
+  Graphics[{Purple, 
+    Arrow[{{0, 0}, (1 - t)*Part[Eigenvectors[A], 2] + 
+       t*A.Part[Eigenvectors[A], 2]}]}]], {t, 0, 1, .03}]  
