@@ -1,7 +1,14 @@
 (*Shows the transformation of the plan when multiplied by a matrix of eigenvectors*)
 
 
-A := {{3, 2}, {4, 1}}; P := {{-1, 1}, {2, 1}}; G := {{-1, 0}, {0, 5}};
+A := {{3, 2}, {4, 1}}; P := {{-1, 1}, {2, 1}}; G := {{-1, 0}, {0, 5}}; (*Defines Matrices*)
+
+v00 := {0, 0}; v10 := {1, 0}; v01 := {0, 1}; v21 := {2, 
+  1}; vn21 := {-2, 1}; v22 := {2, 2}; vn22 := {-2, 2}; v20 := {2, 
+  0}; vn20 := {-2, 
+  0}; v2n1 := {2, -1}; vn2n1 := {-2, -1}; v2n2 := {2, -2}; vn2n2 := \
+{-2, -2}; vn1n2 := {-1, -2}; vn12 := {-1, 
+  2}; v0n2 := {0, -2}; v02 := {0, 2}; v1n2 := {1, -2}; v12 := {1, 2}; (*Defines 2x2 grid*)
 
 Animate[Show[
   Plot[133, {x, -5, 5}, PlotRange -> {-5, 5}, 
