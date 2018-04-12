@@ -1,0 +1,26 @@
+(*Shows the transformation of the plan when multiplied by a matrix of eigenvectors*)
+
+
+A := {{3, 2}, {4, 1}}; P := {{-1, 1}, {2, 1}}; G := {{-1, 0}, {0, 5}};
+
+Animate[Show[
+  Plot[133, {x, -5, 5}, PlotRange -> {-5, 5}, 
+   Epilog -> {Arrow[{(1 - t)*v00 + t*P.v00, (1 - t)*v10 + t*P.v10}], 
+     Arrow[{(1 - t)*v00 + t*P.v00, (1 - t)*v01 + t*P.v01}], 
+     Line[{(1 - t)*vn21 + t*P.vn21, (1 - t)*v21 + t*P.v21}], 
+     Line[{(1 - t)*vn22 + t*P.vn22, (1 - t)*v22 + t*P.v22}], 
+     Line[{(1 - t)*vn20 + t*P.vn20, (1 - t)*v20 + t*P.v20}], 
+     Line[{(1 - t)*vn2n1 + t*P.vn2n1, (1 - t)*v2n1 + t*P.v2n1}], 
+     Line[{(1 - t)*vn2n2 + t*P.vn2n2, (1 - t)*v2n2 + t*P.v2n2}], 
+     Line[{(1 - t)*vn21 + t*P.vn21, (1 - t)*v21 + t*P.v21}], 
+     Line[{(1 - t)*vn2n2 + t*P.vn2n2, (1 - t)*vn22 + t*P.vn22}],
+     Line[{(1 - t)*vn1n2 + t*P.vn1n2, (1 - t)*vn12 + t*P.vn12}], 
+     Line[{(1 - t)*v0n2 + t*P.v0n2, (1 - t)*v02 + t*P.v02}], 
+     Line[{(1 - t)*v1n2 + t*P.v1n2, (1 - t)*v12 + t*P.v12}], 
+     Line[{(1 - t)*v2n2 + t*P.v2n2, (1 - t)*v22 + t*P.v22}]}], 
+  Graphics[{Red, 
+    Arrow[{{0, 0}, (1 - t)*Part[Eigenvectors[A], 1] + 
+       t*P.Part[Eigenvectors[A], 1]}]}], 
+  Graphics[{Purple, 
+    Arrow[{{0, 0}, (1 - t)*Part[Eigenvectors[A], 2] + 
+       t*P.Part[Eigenvectors[A], 2]}]}]], {t, 0, 1, .03}]
