@@ -1,0 +1,196 @@
+(*A=PDP^{-1} This shows that A is equal to the three transformations P^{-1} then D then P*)
+
+A := {{3, 2}, {4, 1}}; P := {{1, 1}, {1, -2}}; G := {{5, 0}, {0, -1}};(*Defines Matrices*)
+
+v00 := {0, 0}; v10 := {1, 0}; v01 := {0, 1}; v21 := {2, 
+  1}; vn21 := {-2, 1}; v22 := {2, 2}; vn22 := {-2, 2}; v20 := {2, 
+  0}; vn20 := {-2, 
+  0}; v2n1 := {2, -1}; vn2n1 := {-2, -1}; v2n2 := {2, -2}; vn2n2 := \
+{-2, -2}; vn1n2 := {-1, -2}; vn12 := {-1, 
+  2}; v0n2 := {0, -2}; v02 := {0, 2}; v1n2 := {1, -2}; v12 := {1, 2}; (*Gives grid*)
+
+
+Animate[Row[{Show[
+    Plot[133, {x, -5, 5}, PlotRange -> {-5, 5}, 
+     Epilog -> {Arrow[{(1 - t)*v00 + t*A.v00, (1 - t)*v10 + t*A.v10}],
+        Arrow[{(1 - t)*v00 + t*A.v00, (1 - t)*v01 + t*A.v01}], 
+       Line[{(1 - t)*vn21 + t*A.vn21, (1 - t)*v21 + t*A.v21}], 
+       Line[{(1 - t)*vn22 + t*A.vn22, (1 - t)*v22 + t*A.v22}], 
+       Line[{(1 - t)*vn20 + t*A.vn20, (1 - t)*v20 + t*A.v20}], 
+       Line[{(1 - t)*vn2n1 + t*A.vn2n1, (1 - t)*v2n1 + t*A.v2n1}], 
+       Line[{(1 - t)*vn2n2 + t*A.vn2n2, (1 - t)*v2n2 + t*A.v2n2}], 
+       Line[{(1 - t)*vn21 + t*A.vn21, (1 - t)*v21 + t*A.v21}], 
+       Line[{(1 - t)*vn2n2 + t*A.vn2n2, (1 - t)*vn22 + t*A.vn22}],
+       Line[{(1 - t)*vn1n2 + t*A.vn1n2, (1 - t)*vn12 + t*A.vn12}], 
+       Line[{(1 - t)*v0n2 + t*A.v0n2, (1 - t)*v02 + t*A.v02}], 
+       Line[{(1 - t)*v1n2 + t*A.v1n2, (1 - t)*v12 + t*A.v12}], 
+       Line[{(1 - t)*v2n2 + t*A.v2n2, (1 - t)*v22 + t*A.v22}]}], 
+    Graphics[{Red, 
+      Arrow[{{0, 0}, (1 - t)*Part[Eigenvectors[A], 1] + 
+         t*A.Part[Eigenvectors[A], 1]}]}], 
+    Graphics[{Purple, 
+      Arrow[{{0, 0}, (1 - t)*Part[Eigenvectors[A], 2] + 
+         t*A.Part[Eigenvectors[A], 2]}]}]], 
+   Show[Plot[133, {x, -5, 5}, PlotRange -> {-5, 5}, 
+     Epilog -> {If[t <= (1/3), 
+        Arrow[{3*((1/3) - t)*v00 + 3*t*Inverse[P].v00, 
+          3*(1/3 - t)*v10 + 3*t*Inverse[P].v10}], Point[{50, 50}]], 
+       If[(1/3) < t <= (2/3), 
+        Arrow[{3*((2/3) - t)*Inverse[P].v00 + 
+           3*(t - 1/3)*G.Inverse[P].v00, 
+          3*(2/3 - t)*Inverse[P].v10 + 3*(t - 1/3)*G.Inverse[P].v10}],
+         Point[{50, 50}]], 
+       If[t > (2/3), 
+        Arrow[{3*(1 - t)*G.Inverse[P].v00 + 
+           3*(t - 2/3)*P.G.Inverse[P].v00, 
+          3*(1 - t)*G.Inverse[P].v10 + 
+           3*(t - 2/3)*P.G.Inverse[P].v10}], Point[{50, 50}]],(*1*)
+       If[t <= (1/3), 
+        Arrow[{3*((1/3) - t)*v00 + 3*t*Inverse[P].v00, 
+          3*(1/3 - t)*v01 + 3*t*Inverse[P].v01}], Point[{50, 50}]], 
+       If[(1/3) < t <= (2/3), 
+        Arrow[{3*((2/3) - t)*Inverse[P].v00 + 
+           3*(t - 1/3)*G.Inverse[P].v00, 
+          3*(2/3 - t)*Inverse[P].v01 + 3*(t - 1/3)*G.Inverse[P].v01}],
+         Point[{50, 50}]], 
+       If[t > (2/3), 
+        Arrow[{3*(1 - t)*G.Inverse[P].v00 + 
+           3*(t - 2/3)*P.G.Inverse[P].v00, 
+          3*(1 - t)*G.Inverse[P].v01 + 
+           3*(t - 2/3)*P.G.Inverse[P].v01}], Point[{50, 50}]],(*2*)
+       If[t <= (1/3), 
+        Line[{3*((1/3) - t)*vn2n2 + 3*t*Inverse[P].vn2n2, 
+          3*(1/3 - t)*vn22 + 3*t*Inverse[P].vn22}], Point[{50, 50}]], 
+       If[(1/3) < t <= (2/3), 
+        Line[{3*((2/3) - t)*Inverse[P].vn2n2 + 
+           3*(t - 1/3)*G.Inverse[P].vn2n2, 
+          3*(2/3 - t)*Inverse[P].vn22 + 
+           3*(t - 1/3)*G.Inverse[P].vn22}], Point[{50, 50}]], 
+       If[t > (2/3), 
+        Line[{3*(1 - t)*G.Inverse[P].vn2n2 + 
+           3*(t - 2/3)*P.G.Inverse[P].vn2n2, 
+          3*(1 - t)*G.Inverse[P].vn22 + 
+           3*(t - 2/3)*P.G.Inverse[P].vn22}], Point[{50, 50}]],(*3*)
+       If[t <= (1/3), 
+        Line[{3*((1/3) - t)*vn1n2 + 3*t*Inverse[P].vn1n2, 
+          3*(1/3 - t)*vn12 + 3*t*Inverse[P].vn12}], Point[{50, 50}]], 
+       If[(1/3) < t <= (2/3), 
+        Line[{3*((2/3) - t)*Inverse[P].vn1n2 + 
+           3*(t - 1/3)*G.Inverse[P].vn1n2, 
+          3*(2/3 - t)*Inverse[P].vn12 + 
+           3*(t - 1/3)*G.Inverse[P].vn12}], Point[{50, 50}]], 
+       If[t > (2/3), 
+        Line[{3*(1 - t)*G.Inverse[P].vn1n2 + 
+           3*(t - 2/3)*P.G.Inverse[P].vn1n2, 
+          3*(1 - t)*G.Inverse[P].vn12 + 
+           3*(t - 2/3)*P.G.Inverse[P].vn12}], Point[{50, 50}]](*4*), 
+       If[t <= (1/3), 
+        Line[{3*((1/3) - t)*v0n2 + 3*t*Inverse[P].v0n2, 
+          3*(1/3 - t)*v02 + 3*t*Inverse[P].v02}], Point[{50, 50}]], 
+       If[(1/3) < t <= (2/3), 
+        Line[{3*((2/3) - t)*Inverse[P].v0n2 + 
+           3*(t - 1/3)*G.Inverse[P].v0n2, 
+          3*(2/3 - t)*Inverse[P].v02 + 3*(t - 1/3)*G.Inverse[P].v02}],
+         Point[{50, 50}]], 
+       If[t > (2/3), 
+        Line[{3*(1 - t)*G.Inverse[P].v0n2 + 
+           3*(t - 2/3)*P.G.Inverse[P].v0n2, 
+          3*(1 - t)*G.Inverse[P].v02 + 
+           3*(t - 2/3)*P.G.Inverse[P].v02}], Point[{50, 50}]](*5*), 
+       If[t <= (1/3), 
+        Line[{3*((1/3) - t)*v1n2 + 3*t*Inverse[P].v1n2, 
+          3*(1/3 - t)*v12 + 3*t*Inverse[P].v12}], Point[{50, 50}]], 
+       If[(1/3) < t <= (2/3), 
+        Line[{3*((2/3) - t)*Inverse[P].v1n2 + 
+           3*(t - 1/3)*G.Inverse[P].v1n2, 
+          3*(2/3 - t)*Inverse[P].v12 + 3*(t - 1/3)*G.Inverse[P].v12}],
+         Point[{50, 50}]], 
+       If[t > (2/3), 
+        Line[{3*(1 - t)*G.Inverse[P].v1n2 + 
+           3*(t - 2/3)*P.G.Inverse[P].v1n2, 
+          3*(1 - t)*G.Inverse[P].v12 + 
+           3*(t - 2/3)*P.G.Inverse[P].v12}], Point[{50, 50}]](*6*), 
+       If[t <= (1/3), 
+        Line[{3*((1/3) - t)*v2n2 + 3*t*Inverse[P].v2n2, 
+          3*(1/3 - t)*v22 + 3*t*Inverse[P].v22}], Point[{50, 50}]], 
+       If[(1/3) < t <= (2/3), 
+        Line[{3*((2/3) - t)*Inverse[P].v2n2 + 
+           3*(t - 1/3)*G.Inverse[P].v2n2, 
+          3*(2/3 - t)*Inverse[P].v22 + 3*(t - 1/3)*G.Inverse[P].v22}],
+         Point[{50, 50}]], 
+       If[t > (2/3), 
+        Line[{3*(1 - t)*G.Inverse[P].v2n2 + 
+           3*(t - 2/3)*P.G.Inverse[P].v2n2, 
+          3*(1 - t)*G.Inverse[P].v22 + 
+           3*(t - 2/3)*P.G.Inverse[P].v22}], Point[{50, 50}]](*7*), 
+       If[t <= (1/3), 
+        Line[{3*((1/3) - t)*vn2n2 + 3*t*Inverse[P].vn2n2, 
+          3*(1/3 - t)*v2n2 + 3*t*Inverse[P].v2n2}], Point[{50, 50}]], 
+       If[(1/3) < t <= (2/3), 
+        Line[{3*((2/3) - t)*Inverse[P].vn2n2 + 
+           3*(t - 1/3)*G.Inverse[P].vn2n2, 
+          3*(2/3 - t)*Inverse[P].v2n2 + 
+           3*(t - 1/3)*G.Inverse[P].v2n2}], Point[{50, 50}]], 
+       If[t > (2/3), 
+        Line[{3*(1 - t)*G.Inverse[P].vn2n2 + 
+           3*(t - 2/3)*P.G.Inverse[P].vn2n2, 
+          3*(1 - t)*G.Inverse[P].v2n2 + 
+           3*(t - 2/3)*P.G.Inverse[P].v2n2}], Point[{50, 50}]](*8*), 
+       If[t <= (1/3), 
+        Line[{3*((1/3) - t)*vn2n1 + 3*t*Inverse[P].vn2n1, 
+          3*(1/3 - t)*v2n1 + 3*t*Inverse[P].v2n1}], Point[{50, 50}]], 
+       If[(1/3) < t <= (2/3), 
+        Line[{3*((2/3) - t)*Inverse[P].vn2n1 + 
+           3*(t - 1/3)*G.Inverse[P].vn2n1, 
+          3*(2/3 - t)*Inverse[P].v2n1 + 
+           3*(t - 1/3)*G.Inverse[P].v2n1}], Point[{50, 50}]], 
+       If[t > (2/3), 
+        Line[{3*(1 - t)*G.Inverse[P].vn2n1 + 
+           3*(t - 2/3)*P.G.Inverse[P].vn2n1, 
+          3*(1 - t)*G.Inverse[P].v2n1 + 
+           3*(t - 2/3)*P.G.Inverse[P].v2n1}], Point[{50, 50}]](*9*), 
+       If[t <= (1/3), 
+        Line[{3*((1/3) - t)*vn20 + 3*t*Inverse[P].vn20, 
+          3*(1/3 - t)*v20 + 3*t*Inverse[P].v20}], Point[{50, 50}]], 
+       If[(1/3) < t <= (2/3), 
+        Line[{3*((2/3) - t)*Inverse[P].vn20 + 
+           3*(t - 1/3)*G.Inverse[P].vn20, 
+          3*(2/3 - t)*Inverse[P].v20 + 3*(t - 1/3)*G.Inverse[P].v20}],
+         Point[{50, 50}]], 
+       If[t > (2/3), 
+        Line[{3*(1 - t)*G.Inverse[P].vn20 + 
+           3*(t - 2/3)*P.G.Inverse[P].vn20, 
+          3*(1 - t)*G.Inverse[P].v20 + 
+           3*(t - 2/3)*P.G.Inverse[P].v20}], Point[{50, 50}]](*10*), 
+       If[t <= (1/3), 
+        Line[{3*((1/3) - t)*vn21 + 3*t*Inverse[P].vn21, 
+          3*(1/3 - t)*v21 + 3*t*Inverse[P].v21}], Point[{50, 50}]], 
+       If[(1/3) < t <= (2/3), 
+        Line[{3*((2/3) - t)*Inverse[P].vn21 + 
+           3*(t - 1/3)*G.Inverse[P].vn21, 
+          3*(2/3 - t)*Inverse[P].v21 + 3*(t - 1/3)*G.Inverse[P].v21}],
+         Point[{50, 50}]], 
+       If[t > (2/3), 
+        Line[{3*(1 - t)*G.Inverse[P].vn21 + 
+           3*(t - 2/3)*P.G.Inverse[P].vn21, 
+          3*(1 - t)*G.Inverse[P].v21 + 
+           3*(t - 2/3)*P.G.Inverse[P].v21}], Point[{50, 50}]](*11*), 
+       If[t <= (1/3), 
+        Line[{3*((1/3) - t)*vn22 + 3*t*Inverse[P].vn22, 
+          3*(1/3 - t)*v22 + 3*t*Inverse[P].v22}], Point[{50, 50}]], 
+       If[(1/3) < t <= (2/3), 
+        Line[{3*((2/3) - t)*Inverse[P].vn22 + 
+           3*(t - 1/3)*G.Inverse[P].vn22, 
+          3*(2/3 - t)*Inverse[P].v22 + 3*(t - 1/3)*G.Inverse[P].v22}],
+         Point[{50, 50}]], 
+       If[t > (2/3), 
+        Line[{3*(1 - t)*G.Inverse[P].vn22 + 
+           3*(t - 2/3)*P.G.Inverse[P].vn22, 
+          3*(1 - t)*G.Inverse[P].v22 + 
+           3*(t - 2/3)*P.G.Inverse[P].v22}], Point[{50, 50}]](*12*)}],
+     Graphics[{Red, 
+      Arrow[{{0, 0}, (1 - t)*Part[Eigenvectors[A], 1] + 
+         t*A.Part[Eigenvectors[A], 1]}]}], 
+    Graphics[{Purple, 
+      Arrow[{{0, 0}, (1 - t)*Part[Eigenvectors[A], 2] + 
+         t*A.Part[Eigenvectors[A], 2]}]}]]}], {t, 0, 1, .03}]
