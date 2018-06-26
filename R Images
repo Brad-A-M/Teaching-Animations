@@ -1,0 +1,9 @@
+#Make a nice histogram from data
+
+x<-runif(1000,0,1)
+
+colors = c("red", "yellow", "green", "violet", "orange", "blue", "pink", "cyan","darksalmon","darkgreen")
+
+
+hist(x,col=colors ,xlab="x-axis",ylab="frequency")
+
