@@ -1,0 +1,31 @@
+#plots a few different binomail distributions
+
+DiscretePlot[
+ Table[PDF[BinomialDistribution[40, p], k], {p, {0.1, 0.5, 0.7}}] // 
+  Evaluate, {k, 36}, PlotRange -> All, PlotMarkers -> Automatic]
+  
+  
+  #An animation to show how changing p changes the distribution
+  Animate[DiscretePlot[PDF[BinomialDistribution[20, p], x], {x, 0, 20}, 
+  PlotRange -> {0, 1}, ExtentSize -> Right], {p, 0, 1, .1}]
+  
+  
+  
+  
+  DiscretePlot[
+ Table[PDF[PoissonDistribution[\[Lambda]], 
+    k], {\[Lambda], {5, 10, 20}}] // Evaluate, {k, 0, 30}, 
+ PlotRange -> All, PlotMarkers -> Automatic]
+  
+  Animate[DiscretePlot[PDF[PoissonDistribution[t], k], {k, 0, 20}, 
+  PlotRange -> {0, .4}], {t, 1, 10, .1}]
+  
+  
+  #approximately normal
+  
+  Show[{Plot[PDF[NormalDistribution[10, Sqrt[20/3]], x], {x, 0, 25}, 
+   PlotStyle -> {Thick, Green}], 
+  DiscretePlot[
+   PDF[BinomialDistribution[30, .333333333], x], {x, 0, 25}, 
+   PlotRange -> {0, .31}, ExtentSize -> Right]}]
+  
