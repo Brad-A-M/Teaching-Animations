@@ -36,3 +36,23 @@ While[
     1, 100}]; 
  Graphics[Line[T], Axes -> {True, True}, 
   Ticks -> {{-2, -1, 0, 1, 2}, None}], {n, 1, 1.96, .01}]
+  
+  
+  ######################################################################
+  An assignment in R to show CLT
+  
+  e<-rexp(100,4)
+
+hist(e)
+v<-c()
+
+x<-0;
+while(x<100){
+  
+  v<-c(v,mean(sample(e,30)))
+  
+  x=x+1;
+  
+}
+
+hist(v)
