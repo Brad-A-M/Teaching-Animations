@@ -1,0 +1,16 @@
+(*Just a cute little one*)
+(*2-D version*)
+a[t_] = {Cos[t], 2* Sin[t]}; 
+b[t_] = D[a[t], t]/Sqrt[(Dot[a'[t], a'[t]])]; 
+c[t_] = a''[t]/Sqrt[(Dot[a''[t], a''[t]])];
+Animate[ParametricPlot[{a[t]}, {t, 0, 10}, AspectRatio -> 1, 
+  Epilog -> {PointSize[.04], Point[{a[u]}], 
+    Arrow[{a[u], a[u] + b[u]}], Arrow[{a[u], a[u] + c[u]}]}], {u, 0, 
+  2 Pi}]
+  
+  (*3-D version*)
+  Animate[Show[
+  ParametricPlot3D[d[t], {t, -10, 10}, PlotRange -> {-2.5, 2.5}], 
+  Graphics3D[Point[{d[u]}]], Graphics3D[Arrow[{d[u], d[u] + f[u]}]], 
+  Graphics3D[Arrow[{d[u], d[u] + g[u]}]], 
+  Graphics3D[Arrow[{d[u], d[u] + h[u]}]]], {u, -10, 10}]
