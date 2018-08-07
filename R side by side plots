@@ -1,0 +1,235 @@
+"cuckoos" data set
+
+
+egglength eggbreadth species id
+21.7 16.1 meadow.pipit  21
+22.6 17.0 meadow.pipit  22
+20.9 16.2 meadow.pipit  23
+21.6 16.2 meadow.pipit  24
+22.2 16.9 meadow.pipit  25
+22.5 16.9 meadow.pipit  26
+22.2 17.3 meadow.pipit  27
+24.3 16.8 meadow.pipit  28
+22.3 16.8 meadow.pipit  29
+22.6 17.0 meadow.pipit  30
+20.1 16.5 meadow.pipit  31
+22.0 16.9 meadow.pipit  32
+22.8 16.5 meadow.pipit  33
+22.0 17.0 meadow.pipit  34
+22.4 17.0 meadow.pipit  35
+22.3 16.3 meadow.pipit  36
+20.6 16.2 meadow.pipit  37
+22.1 16.8 meadow.pipit  38
+21.9 17.0 meadow.pipit  39
+23.0 16.9 meadow.pipit  40
+22.0 17.0 meadow.pipit  41
+22.0 17.0 meadow.pipit  42
+22.1 17.3 meadow.pipit  43
+22.0 16.8 meadow.pipit  44
+19.6 15.8 meadow.pipit  45
+22.8 17.1 meadow.pipit  46
+22.0 16.9 meadow.pipit  47
+23.4 16.4 meadow.pipit  48
+23.8 16.4 meadow.pipit  49
+23.3 16.8 meadow.pipit  50
+22.5 17.1 meadow.pipit  51
+22.3 17.0 meadow.pipit  52
+21.9 17.1 meadow.pipit  53
+22.0 17.2 meadow.pipit  54
+21.7 16.2 meadow.pipit  55
+23.3 16.7 meadow.pipit  56
+22.2 16.8 meadow.pipit  57
+22.3 16.2 meadow.pipit  58
+22.8 16.4 meadow.pipit  59
+22.9 17.2 meadow.pipit  60
+23.7 17.0 meadow.pipit  61
+22.0 17.2 meadow.pipit  62
+21.9 17.0 meadow.pipit  63
+22.2 16.2 meadow.pipit  64
+24.4 16.2 meadow.pipit  65
+22.7 16.3 tree.pipit  66
+23.3 16.6 tree.pipit  67
+24.0 17.0 tree.pipit  68
+23.6 16.9 tree.pipit  69
+22.1 16.3 tree.pipit  70
+21.8 16.7 tree.pipit  71
+21.1 16.5 tree.pipit  72
+23.4 16.2 tree.pipit  73
+23.8 16.3 tree.pipit  74
+23.3 16.7 tree.pipit  75
+24.0 17.5 tree.pipit  76
+23.5 17.3 tree.pipit  77
+23.2 16.4 tree.pipit  78
+24.0 17.3 tree.pipit  79
+22.4 16.0 tree.pipit  80
+22.0 17.0 hedge.sparrow  82
+23.9 16.9 hedge.sparrow  83
+20.9 15.8 hedge.sparrow  84
+23.8 17.3 hedge.sparrow  85
+25.0 17.5 hedge.sparrow  86
+24.0 17.5 hedge.sparrow  87
+21.7 16.2 hedge.sparrow  88
+23.8 16.5 hedge.sparrow  89
+22.8 16.2 hedge.sparrow  90
+23.1 17.1 hedge.sparrow  91
+23.1 16.1 hedge.sparrow  92
+23.5 16.9 hedge.sparrow  93
+23.0 16.7 hedge.sparrow  94
+23.0 17.0 hedge.sparrow  95
+21.8 16.0 robin  96
+23.0 15.9 robin  97
+23.3 17.1 robin  98
+22.4 16.6 robin  99
+22.4 16.9 robin 100
+23.0 16.1 robin 101
+23.0 17.2 robin 102
+23.0 16.2 robin 103
+23.9 16.9 robin 104
+22.3 15.2 robin 105
+22.0 16.3 robin 106
+22.6 17.0 robin 107
+22.0 16.0 robin 108
+22.1 16.4 robin 109
+21.1 16.4 robin 110
+23.0 17.0 robin 111
+23.0 16.3 pied.wagtail 198
+23.4 16.7 pied.wagtail 199
+24.0 17.0 pied.wagtail 200
+23.3 16.3 pied.wagtail 201
+23.1 16.7 pied.wagtail 202
+22.4 16.5 pied.wagtail 203
+21.8 16.0 pied.wagtail 204
+21.8 16.0 pied.wagtail 205
+24.9 16.8 pied.wagtail 206
+24.0 15.8 pied.wagtail 207
+22.1 16.2 pied.wagtail 208
+21.0 17.1 pied.wagtail 209
+22.6 16.0 pied.wagtail 210
+21.9 16.9 pied.wagtail 211
+24.0 17.2 pied.wagtail 212
+19.8 15.0 wren 224
+22.1 16.0 wren 225
+21.5 16.2 wren 226
+20.9 15.7 wren 227
+22.0 16.2 wren 228
+21.0 15.5 wren 229
+22.3 16.0 wren 230
+21.0 15.9 wren 231
+20.3 15.5 wren 232
+20.9 15.9 wren 233
+22.0 16.0 wren 234
+20.0 15.7 wren 235
+20.8 15.9 wren 236
+21.2 16.0 wren 237
+21.0 16.0 wren 238
+
+My R assignment in LaTex.
+
+
+R1. [X] Cuckoos are a species of bird that lays eggs in the nest of other birds. The eggs are then unwittingly adopted and hatched by the host birds. Latter (1902) collected data from 120 cuckoo eggs found in nests of birds of various species. The data is in a file called cuckoos.txt. The variable names are: egglength, eggbreadth, species, and id (where id is an identification number for each egg).
+  
+  \vspace{.3cm}
+  
+  Before you start, first look at this file (using wordpad). Then open R and import the file using the instructions from the previous assignments.
+   \vspace{.3cm}
+  
+  filename $<$- read.table(``R6data.txt",header = TRUE, sep = ``");
+
+attach(filename);
+ \vspace{.3cm}
+ 
+ a) Find and compare the mean egg length for cuckoo eggs laid in nests of each species. To find the mean egg length for cuckoo eggs laid in hedge sparrow nests, you type mean(egglength[species -$>$``hedge.sparrow"]); Note the quotes around hedge.sparrow, this is necessary because species is a column of text vales (factors not numbers). The species names from when you looked at the file, you could type summary(species);, and R would tell you the names of the different species and how many cuckoo eggs were laid in nests of each species.
+  \vspace{.3cm}
+  
+  Rather than doing each species separately, you can use tapply, a command that lets you apply a function (such as mean) to each subset of a vector, where the subsets are defined by a given set of factors. So, if I type tapply(egglength, species, mean);, R will find the mean egglength separately for each different species.
+  
+  Turn in a completed and filled-in version of the following table:
+  
+  \begin{tabular}{l|l|l}
+  \hline
+  Species & mean & standard deviation \\
+  
+  \hline
+  
+  hedge sparrow & &\\
+  
+  meadow.pippit & &\\
+  
+  \vdots & \vdots & \vdots\\
+  
+  wren & & \\
+  
+  \hline
+  
+  \end{tabular}
+ 
+ \vspace{.3cm}
+ 
+ b. Turn in a side by side boxplot comparing the egg lengths of cuckoo eggs laid in nests of different species.
+ 
+ \vspace{.3cm}
+ 
+ c. Based on your results to parts a) and b) of this problem, does it appear as if cuckoos choose which species' nests to use depending on how big their eggs will be?
+ 
+ 
+ \vspace{.3cm}
+ 
+ How to do side by side boxplots.\\
+ 
+ boxplot(egglength $\sim$ species);.
+ 
+ To make them different colors make a vector of 6 colors: bradscolors$<$-c(``red", ``blue", ``green", ``darkgreen", ``gray", ``gold"); The build it, boxplot(egglength $\sim$ species, col=bradscolors);. 
+ 
+  
+ \vspace{.3cm}
+ Try making nice labels for the x-axis. You might also need to reset the width in order to see the labels. Try pdf(file = ‘‘temp.pdf’’, width = 10);
+boxplot(egglength$\sim$species, col = bradscolors, xlab = ‘‘Species’’, ylab =
+‘‘Egg Length’’);
+dev.off();
+
+
+\vspace{.3cm}
+
+Explore other options online to make your plot beautiful.
+
+
+ \vspace{1cm}
+ 
+ R2 [X]. Researchers are often interested in making statements about the mean of some population. The typical approach is to get a random sample, find the mean of the sample, and use it to draw conclusions about the mean of the population from which the sample was drawn. This problem is designed to give you a feel for the behavior of the sample mean and how it relates to the mean of a population.
+ 
+ \vspace{.3cm}
+ 
+ For each of $n=5, n=10, n=25, n=50, n=100,$ and $n=1000$ generate 10,000 random samples of size $n$ from a normal distribution with mean $\mu=50$ and standard deviation $\sigma=5$. For each of these datasets, calculate $\bar{x}.$ Hence, for say, $n=5$ you will have 10,000 datasets, each of which resulted in a value for $\bar{x}.$ This will give you 10,000 $\bar{x}$ values for $n=5.$
+ 
+  \vspace{.3cm}
+  
+  a) For each of the given values of $n,$ find the mean, variance, and standard deviation for the 10,000 $\bar{x}$ values and add them to the table below.
+  
+  
+  \begin{tabular}{l|l|l}
+  n & mean($\bar{x}$) & Stdev($\bar{x}$)\\
+  \hline
+  5&&\\
+  10 &&\\
+   25&&\\
+  50 &&\\
+   100&&\\
+  1000 &&\\
+  
+  \hline
+  
+  \end{tabular}
+ 
+ b) For each value of $n,$ you have a set of $\bar{x}$ values that you can use to make a histogram. All histograms should be on separate panels within the same graph.
+ 
+ \vspace{.3cm}
+ 
+How to do 3. To get a single random sample of $n$ values from a normal distribution with mean $\mu$ and standard deviation, $\sigma$, type rnorm($n, \mu, \sigma)$;. 
+
+Now we generate multiple random samples. Store them in a matrix, say xmat. Each column of the matrix will be a different random sample. If we want $m$ random samples, each of size $n$ from a normal distribution use
+
+xmat$<$- replicate(m, rnorm(n,$\mu, \sigma$)); 
+
+Then use hist(xmat).
+
+To analyze the columns independently use the apply function. If you want the mean of each row type apply(xmat, 2, mean); where the ``2" tells R to consider columns. (a 1 here would be for rows). Define xbar5$<$- apply(xmat, 2,mean);. Once you have xbar5, use commands like mean and sd to fill in the table.
